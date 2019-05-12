@@ -9,3 +9,10 @@ def home(request):
     首页
     """
     return render(request, 'home_application/home.html')
+
+
+def helloworld(request):
+    """
+    helloworld
+    """
+    return render(request, 'home_application/helloworld.html')

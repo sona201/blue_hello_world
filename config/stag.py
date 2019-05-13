@@ -16,22 +16,16 @@ RUN_MODE = 'STAGING'
 
 
 # 预发布环境数据库可以在这里配置
-# DATABASES.update(
-#     {
-#         'default': {
-#             'ENGINE': '',
-#             'NAME': '',  # 数据库名
-#             'USER': '',  # 数据库用户
-#             'PASSWORD': '',  # 数据库密码
-#             'HOST': '',  # 数据库主机
-#             'PORT': '',  # 数据库端口
-#         },
-#     }
-# )
-
-DATABASES.update = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+DATABASES.update(
+    {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'dbtest',  # 数据库名
+            'USER': 'root',  # 数据库用户
+            'PASSWORD': 'Uqv.83WuNm',  # 数据库密码
+            'HOST': '10.0.1.192',  # 数据库主机
+            'PORT': '3306',  # 数据库端口
+        },
     }
-}
+)
+

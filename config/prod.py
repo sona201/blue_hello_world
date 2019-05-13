@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from config import RUN_VER
+
 if RUN_VER == 'open':
     from blueapps.patch.settings_open_saas import *  # noqa
 else:
@@ -15,15 +16,22 @@ RUN_MODE = 'PRODUCT'
 
 
 # 正式环境数据库可以在这里配置
-DATABASES.update(
-    {
-        'default': {
-            'ENGINE': '',
-            'NAME': '',  # 数据库名
-            'USER': '',  # 数据库用户
-            'PASSWORD': '',  # 数据库密码
-            'HOST': '',  # 数据库主机
-            'PORT': '',  # 数据库端口
-        },
+# DATABASES.update(
+#     {
+#         'default': {
+#             'ENGINE': '',
+#             'NAME': '',  # 数据库名
+#             'USER': '',  # 数据库用户
+#             'PASSWORD': '',  # 数据库密码
+#             'HOST': '',  # 数据库主机
+#             'PORT': '',  # 数据库端口
+#         },
+#     }
+# )
+
+DATABASES.update = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-)
+}
